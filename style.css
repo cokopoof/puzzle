@@ -1,0 +1,118 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  display: grid;
+  grid-template-columns: 750px auto;
+}
+
+button {
+  border: none;
+  border: 1px solid white;
+  font-size: 25px;
+  background: crimson;
+  color: white;
+  padding: 10px 15px;
+}
+button:hover {
+  background: #333;
+  cursor: pointer;
+}
+
+#sidebar {
+  padding: 0 20%;
+  max-height: 450px;
+  margin: 0 50px;
+  display: flex;
+  flex-direction: column;
+  overflow: scroll;
+  background: #333;
+}
+
+.puzzle-thumbnail {
+  width: 100%;
+}
+.puzzle-thumbnail:hover {
+  cursor: pointer;
+  box-shadow: 0 0 20px 4px rgba(255, 255, 255, 0.4);
+}
+
+#puzzle-container {
+  display: grid;
+  grid-template-columns: repeat(5, 150px);
+  gap: 1px;
+  max-width: 750px;
+}
+
+.puzzle-piece {
+  width: 150px;
+  background-image: url("jojoyuckyuck.jpg");
+  background-size: 750px;
+  background-repeat: no-repeat;
+}
+.puzzle-piece:hover {
+  cursor: pointer;
+}
+
+#piece-1 {
+  background-position: 0px 0px;
+}
+
+#piece-2 {
+  background-position: -150px 0px;
+}
+
+#piece-3 {
+  background-position: -300px 0px;
+}
+
+#piece-4 {
+  background-position: -450px 0px;
+}
+
+#piece-5 {
+  background-position: -600px 0px;
+}
+
+#piece-6 {
+  background-position: 0px -150px;
+}
+
+#piece-7 {
+  background-position: -150px -150px;
+}
+
+#piece-8 {
+  background-position: -300px -150px;
+}
+
+#piece-9 {
+  background-position: -450px -150px;
+}
+
+#piece-10 {
+  background-position: -600px -150px;
+}
+
+#piece-11 {
+  background-position: 0px -300px;
+}
+
+#piece-12 {
+  background-position: -150px -300px;
+}
+
+#piece-13 {
+  background-position: -300px -300px;
+}
+
+#piece-14 {
+  background-position: -450px -300px;
+}
+
+#piece-15 {
+  background-position: -600px -300px;
+}
+
+/*# sourceMappingURL=style.css.map */

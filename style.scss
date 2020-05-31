@@ -1,0 +1,72 @@
+$canvasSize : 750px;
+$tileSize : $canvasSize / 5;
+
+* {
+  box-sizing: border-box;
+}
+body {
+  display: grid;
+  grid-template-columns: $canvasSize auto;
+}
+button {
+  border: none;
+  border: 1px solid white;
+  font-size: 25px;
+  background: crimson;
+  color: white;
+  padding: 10px 15px;
+  &:hover {
+    background: #333;
+    cursor: pointer;
+  }
+}
+#sidebar {
+  padding: 0 20%;
+  max-height: $tileSize * 3;
+
+  margin: 0 50px;
+  display: flex;
+  flex-direction: column;
+  overflow: scroll;
+  background: #333;
+}
+.puzzle-thumbnail {
+  width: 100%;
+  &:hover {
+    cursor: pointer;
+    box-shadow: 0 0 20px 4px rgba(255,255,255,0.4);
+  }
+}
+#puzzle-container {
+  display: grid;
+  grid-template-columns: repeat(5, $tileSize);
+  gap: 1px;
+  max-width: $canvasSize;
+}
+
+.puzzle-piece {
+
+  width: $tileSize;
+  background-image: url('jojoyuckyuck.jpg');
+  background-size: $canvasSize;
+  background-repeat: no-repeat;
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+@for $i from 0 through 4 {
+  #piece-#{$i + 1} {
+    background-position: $i * -$tileSize 0px;
+  }
+}
+@for $i from 0 through 4 {
+  #piece-#{$i + 6} {
+    background-position: $i * -$tileSize -#{$tileSize};
+  }
+}
+@for $i from 0 through 4 {
+  #piece-#{$i + 11} {
+    background-position: $i * -$tileSize $tileSize * -2;
+  }
+}
