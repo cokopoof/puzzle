@@ -15,7 +15,8 @@
        'ice-ruins.jpg',
        'cat-butterfly.png',
        'moon-cat.jpg',
-       'fantasy_woods.jpg'
+       'fantasy_woods.jpg',
+       'dragon_fairy.jpg'
      ],
      imageNodes = new Array(puzzles.length),
      sfxPlace = new Audio('clap.mp3'),
@@ -51,7 +52,8 @@ thumbnails.forEach((item, i) => {
 //thumbnail clicked
 function changePuzzle(event) {
   let newPuzzle = event.target;
-
+  moveCount = 0;
+  document.getElementById('move-count').textContent = "" + moveCount + "";
   cards.forEach((tile, i) => {
     tile.style.backgroundImage = "url(" + newPuzzle.title + ")";
   });
@@ -87,7 +89,7 @@ function andUp() {
   checkOrder(document.querySelectorAll('.puzzle-piece'));
   if(checkOrder(document.querySelectorAll('.puzzle-piece'))) {
     sfxVictory.play();
-    alert("Victory!");
+    alert("Victory!\nYou Did it in " + moveCount + " moves!");
   }
 }
 

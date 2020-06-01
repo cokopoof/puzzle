@@ -20,6 +20,9 @@ function ranomizeDomOrder(domParentSelector, domChildrenSelector) {
   catch(err) {
     console.log(err);
   }
+  // reset Moves
+  moveCount = 0;
+  document.getElementById('move-count').textContent = "" + moveCount + "";
   /* iterates through each item in nodelist to select and random node in the list to (re)append to the parent at the bottom, randomizing the order */
   domList.forEach((item, i) => {
       parentYo.appendChild(domList[random(domList.length)]);
