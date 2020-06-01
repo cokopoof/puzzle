@@ -6,42 +6,68 @@ $tileSize : $canvasSize / 5;
 }
 body {
   display: grid;
-  grid-template-columns: $canvasSize auto;
+  grid-template-areas: "puzzle sidebar"
+                       "footer footer";
+  grid-template-columns: 75% 25%;
+  justify-content: center;
+}
+h1, h2, h3 {
+  text-align: center;
 }
 button {
   border: none;
   border: 1px solid white;
-  font-size: 25px;
+  font-size: 1.1em;
   background: crimson;
   color: white;
   padding: 10px 15px;
+  width: 25%;
   &:hover {
     background: #333;
     cursor: pointer;
   }
 }
-#sidebar {
-  padding: 0 20%;
-  max-height: $tileSize * 3;
-
-  margin: 0 50px;
+#options {
+  width: 70%;
   display: flex;
-  flex-direction: column;
-  overflow: scroll;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-self: center;
+  margin: 50px 0;
+}
+#sidebar {
+  grid-area: sidebar;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+#footer-bar {
+  grid-area: footer;
+}
+#puzzle-menu {
+  padding: 5px 15px;
+  max-height: 60vh;
   background: #333;
+  overflow: scroll;
 }
 .puzzle-thumbnail {
-  width: 100%;
+  max-width: 100%;
+  margin: 5px 0;
   &:hover {
     cursor: pointer;
-    box-shadow: 0 0 20px 4px rgba(255,255,255,0.4);
+    box-shadow: 0 0 25px 7px rgba(255,255,255,0.2);
   }
 }
 #puzzle-container {
+  grid-area: puzzle;
   display: grid;
   grid-template-columns: repeat(5, $tileSize);
   gap: 1px;
   max-width: $canvasSize;
+  margin: 0 auto;
+  align-self: end;
 }
 
 .puzzle-piece {

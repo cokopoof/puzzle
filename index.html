@@ -28,9 +28,21 @@
     <div class="puzzle-piece" id="piece-15"></div>
   </div>
   <div id="sidebar">
-    <button type="button" name="button" onclick="ranomizeDomOrder('#puzzle-container', '.puzzle-piece')">Randomize!</button>
-    <button type="button" name="button" onclick="reset('#puzzle-container', '.puzzle-piece')">Reset!</button>
+    <!--<button type="button" name="button" onclick="ranomizeDomOrder('#puzzle-container', '.puzzle-piece')">Restart</button>
+    <button type="button" name="button" onclick="reset('#puzzle-container', '.puzzle-piece')"></button>-->
+    <h1>Start A New Puzzle</h1>
     <div id="puzzle-menu"></div>
+  </div>
+  <div id="footer-bar">
+    <div id="options">
+      <button type="button" name="button">Easy</button>
+      <button type="button" name="button">Medium</button>
+      <button type="button" name="button">Hard</button>
+      <button type="button" name="button" onclick="ranomizeDomOrder('#puzzle-container', '.puzzle-piece')">Restart</button>
+    </div>
+    <div id="move-container">
+      <h2>Moves: <span id="move-count"></span></h2>
+    </div>
   </div>
   <script type="text/javascript" src="puzzleSetup.js" async></script>
   <script type="text/javascript" src="eventHandling.js" async></script>

@@ -19,7 +19,8 @@
      ],
      imageNodes = new Array(puzzles.length),
      sfxPlace = new Audio('clap.mp3'),
-     sfxVictory = new Audio('victory.mp3');
+     sfxVictory = new Audio('victory.mp3'),
+     moveCount = 0;
 
 randomPuzzle(puzzles);
 
@@ -82,6 +83,7 @@ function andUp() {
   shiftedSet.forEach((item, i) => {
     document.querySelector('#puzzle-container').appendChild(item);
   });
+  document.getElementById('move-count').textContent = "" + (++moveCount) + "";
   checkOrder(document.querySelectorAll('.puzzle-piece'));
   if(checkOrder(document.querySelectorAll('.puzzle-piece'))) {
     sfxVictory.play();
